@@ -1,0 +1,114 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+#pragma warning(disable:4996)
+#pragma warning(disable:6031)
+
+
+enum{Joueuses=128};
+enum{lgMot=30};
+enum{Matchs=127};
+enum{Tournois=4};
+enum{Joueurs=2};
+
+typedef struct {
+	char nom[lgMot + 1];
+	unsigned int points;
+} Joueuse;
+
+typedef struct {
+	unsigned int idxGagnante;
+	unsigned int idxPerdante;
+} Match;
+
+typedef struct {
+	char NomTournoi[lgMot];
+	char Date[lgMot];
+	char ListeMatchs[Matchs][Joueurs][lgMot];
+}Tournoi;
+
+typedef struct {
+	char ListeTournois[Tournois];
+}TournoisWTA;
+
+int definir_nombre_tournois(){
+	int nombre;
+	scanf("%d", &nombre);
+	return nombre;
+}
+
+void enregistrement_tournoi(Tournoi* t, Match* m) {
+	scanf("%s", t->NomTournoi);
+	scanf("%s", t->Date);
+	int i;
+	m->idxGagnante = 0;
+	m->idxPerdante = 1;
+	for (i = 0; i < 127; ++i) {
+		scanf("%s %s", t->ListeMatchs[i][m->idxGagnante], t->ListeMatchs[i][m->idxPerdante]);
+	}
+}
+
+char affichage_matchs_tournoi(Tournoi* t, Match* m) {
+	printf("%s %s\n", t->NomTournoi, t->Date);
+	int i=0;
+	m->idxGagnante = 0;
+	m->idxPerdante = 1;
+	printf("64emes de finale\n");
+	while ( i < 64 ) {
+		printf("%s %s\n", t->ListeMatchs[i][m->idxGagnante], t->ListeMatchs[i][m->idxPerdante]);
+		++i;
+	}
+	printf("32emes de finale\n");
+	while ( i < 96) {
+		printf("%s %s\n", t->ListeMatchs[i][m->idxGagnante], t->ListeMatchs[i][m->idxPerdante]);
+		++i;
+	}
+	printf("16emes de finale\n");
+	while (i < 112) {
+		printf("%s %s\n", t->ListeMatchs[i][m->idxGagnante], t->ListeMatchs[i][m->idxPerdante]);
+		++i;
+	}
+	printf("8emes de finale\n");
+	while (i < 120) {
+		printf("%s %s\n", t->ListeMatchs[i][m->idxGagnante], t->ListeMatchs[i][m->idxPerdante]);
+		++i;
+	}
+	printf("quarts de finale\n");
+	while (i < 124) {
+		printf("%s %s\n", t->ListeMatchs[i][m->idxGagnante], t->ListeMatchs[i][m->idxPerdante]);
+		++i;
+	}
+	printf("demi-finales\n");
+	while (i < 126) {
+		printf("%s %s\n", t->ListeMatchs[i][m->idxGagnante], t->ListeMatchs[i][m->idxPerdante]);
+		++i;
+	}
+	printf("finale\n");
+	while (i < 127) {
+		printf("%s %s\n", t->ListeMatchs[i][m->idxGagnante], t->ListeMatchs[i][m->idxPerdante]);
+		++i;
+	}
+}
+
+int main() {
+	char mot[lgMot];
+	Tournoi t;
+	Match m;
+	while (1) {
+		scanf("%s", &mot);
+		if (strcmp(mot, "definir_nombre_tournois") == 0) {
+			int nombre_tournois = definir_nombre_tournois();
+		}
+		else if (strcmp(mot, "enregistrement_tournoi") == 0) {
+			enregistrement_tournoi(&t,&m);
+		}
+		else if (strcmp(mot, "affichage_matchs_tournoi") == 0) {
+			affichage_matchs_tournoi(&t,&m);
+		}
+		if (strcmp(mot, "exit") == 0) {
+			exit(0);
+		}
+	}
+	system("pause");
+	return 0;
+}

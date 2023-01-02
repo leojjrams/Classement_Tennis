@@ -1,0 +1,4 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: Le répertoire intermédiaire (x64\Debug\) contient des fichiers partagés provenant d'un autre projet (Projet_IAP.vcxproj). Cela peut entraîner un comportement de nettoyage et de regénération incorrect.
+  Source.c
+C:\Users\Anwender\OneDrive\Documents\Travail\Descartes_1A\Projet_IAP_Rams-Lenouvel-Esteves-104\Projet_IAP\Projet_IAP\Source.c(135): warning C4716: 'affichage_matchs_tournoi' : doit retourner une valeur
+  Projet_IAP.vcxproj -> C:\Users\Anwender\OneDrive\Documents\Travail\Descartes_1A\Projet_IAP_Rams-Lenouvel-Esteves-104\Projet_IAP\x64\Debug\Sprint1.exe

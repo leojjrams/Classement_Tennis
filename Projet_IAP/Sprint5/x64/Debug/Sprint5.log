@@ -1,0 +1,4 @@
+﻿  Source.c
+C:\Users\Anwender\OneDrive\Documents\Travail\Descartes_1A\Projet_IAP_Rams-Lenouvel-Esteves-104\Projet_IAP\Sprint5\Source.c(194,12): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\Anwender\OneDrive\Documents\Travail\Descartes_1A\Projet_IAP_Rams-Lenouvel-Esteves-104\Projet_IAP\Sprint5\Source.c(246,10): warning C4101: 't' : variable locale non référencée
+  Sprint5.vcxproj -> C:\Users\Anwender\OneDrive\Documents\Travail\Descartes_1A\Projet_IAP_Rams-Lenouvel-Esteves-104\Projet_IAP\x64\Debug\Sprint5.exe
